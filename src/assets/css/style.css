@@ -440,7 +440,7 @@ ol {
 .hero {
   min-height: 666px;
   padding-top: 330px;
-  background-image: url(../img/front.jpg);
+  /* background-image: url(../img/front_new.jpg); */
 }
 
 .hero__text {

@@ -23,14 +23,16 @@ export class HomePage implements OnInit {
       buttons: [{
         text: 'Google',
         icon: 'logo-google',
+        cssClass: 'logo-google',
         handler: () => {
-          window.location.href = this.googleCalenderURL;
+          this.windowOpen(this.googleCalenderURL);
         }
       }, {
         text: 'Outlook',
         icon: 'calendar',
+        cssClass: 'logo-outlook',
         handler: () => {
-          window.location.href = this.outlookCalenderURL;
+          this.windowOpen(this.outlookCalenderURL);
         }
       },
       {
@@ -47,6 +49,13 @@ export class HomePage implements OnInit {
 
 
   location() {
-    window.location.href = 'https://goo.gl/maps/JNo1admJwQitp3Eu6';
+    this.windowOpen('https://goo.gl/maps/JNo1admJwQitp3Eu6');
+  }
+
+  windowOpen(url) {
+    window.open(
+      url,
+      '_blank' // <- This is what makes it open in a new window.
+    );
   }
 }

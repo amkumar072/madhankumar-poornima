@@ -117,3 +117,14 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+
+ion-loading {
+  color: green;
+}
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+.my-custom-class {
+  color: green;
+  --spinner-color: #fff;
+}

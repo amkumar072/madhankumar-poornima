@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:ionic": "ionic serve --host 0.0.0.0 --port 8100 --aot",
+    "start:ionic": "ionic serve --host 0.0.0.0 --port 8101 --aot",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
