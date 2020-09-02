@@ -52,6 +52,10 @@ export class HomePage implements OnInit {
     this.windowOpen('https://goo.gl/maps/JNo1admJwQitp3Eu6');
   }
 
+  gysiteLink(){
+    this.windowOpen('https://gysite.in');
+  }
+
   windowOpen(url) {
     window.open(
       url,
