@@ -20,9 +20,9 @@ const routes: Routes = [
     loadChildren: () => import('./rsvp/rsvp.module').then( m => m.RSVPPageModule)
   },
   {
-    path: 'footer',
-    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
-  }
+    path: '**',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
 ];
 
 @NgModule({
