@@ -1,12 +1,16 @@
 <ion-header>
-  <!-- <ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Wedding Invitation</ion-title>
-  </ion-toolbar> -->
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-slider-images></app-slider-images>
 
+
+  <app-slider-images></app-slider-images>
   <!-- weblive -->
   <!-- <iframe width="100%" height="70%" src="https://www.youtube-nocookie.com/embed/WgjmWJjGtb4" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -18,13 +22,14 @@
 
 
   <!-- Invitation section-->
-  <ion-grid>
-    <ion-row>
+  <ion-grid class="ion-padding">
+    <ion-row >
       <ion-col class="ion-text-center">
-        <div style="padding:20px">
+        <div style="padding-top:80px; padding-bottom: 30px;">
           <ion-label style="font-size: x-large;" color="primary">
             Event Details
-          </ion-label>
+          </ion-label> <br/>
+          <img src="../../assets/img/icon/ti.png" alt="">
         </div>
 
       </ion-col>
@@ -94,6 +99,65 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <!-- Services Section Begin -->
+  <section class="services spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title">
+            <ion-label>Our services</ion-label> <br/>
+            <img src="../../assets/img/icon/ti.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-1.png" alt="">
+            <h4>Photos & Video</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-2.png" alt="">
+            <h4>Wedding Makeup</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-3.png" alt="">
+            <h4>Restaurant</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-4.png" alt="">
+            <h4>Live Music & DJ</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-5.png" alt="">
+            <h4>Wedding cake</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="services__item">
+            <img src="../../assets/img/icon/si-6.png" alt="">
+            <h4>Honeymoons</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusm`od tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section End -->
 
   <!-- RSVP-->
   <ion-grid class="ion-padding" style="background-color: antiquewhite;">

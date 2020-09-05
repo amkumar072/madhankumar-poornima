@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+  dark = false;
 
   constructor(
     private platform: Platform,
@@ -30,6 +31,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+
+  changeDarkmode(event: CustomEvent) {
+    const result = event.detail.checked;
+    this.dark = result;
   }
 
   async presentLoadingWithOptions() {
