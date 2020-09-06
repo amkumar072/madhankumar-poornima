@@ -88,23 +88,10 @@
     </ion-grid>
   </section>
 
-  <!-- maps-->
-  <section id="maps">
-    <ion-grid style="margin-bottom: -6px;" class="ion-no-padding">
-      <ion-row>
-        <ion-col>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15537.373810557063!2d79.0943165!3d13.203740699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad5c10ea2dfb6b%3A0x70c23d4d78c98cf7!2sSaiven%20function%20hall!5e0!3m2!1sen!2suk!4v1598799562595!5m2!1sen!2suk"
-            width="100%" height="360" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-            tabindex="0"></iframe>
 
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </section>
 
   <!-- Events Section Begin -->
-  <section id="events" class="services spad" style="background-color: #3b3e33;">
+  <section id="events" class="services spad">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -164,33 +151,39 @@
 
   <!-- RSVP-->
   <section id="rsvp">
-    <ion-grid class="ion-padding" style="background-color: antiquewhite;">
+    <ion-grid class="ion-padding" style="background-color: gray;">
       <ion-row>
-        <ion-col size="4" offset="4" class="ion-text-center">
-
-          <ion-label color="light">
+        <ion-col size-md="6" size-xs="12">
+          <img src="../../assets/img/yourInvited.jpg">
+        </ion-col>
+        <ion-col size-md="6" size-xs="12" class="ion-text-center">
+          <ion-label style="padding: 20px;">
+            jafkfjkjfkdsjflkdjkjfklajsfklj
           </ion-label>
-
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="4" offset="4" class="ion-text-center">
-
-          <img routerLink="/rsvp" src="../../assets/img/rsvp.gif">
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6" offset="3" class="ion-text-center">
+          <br />
           <ion-button color="primary" routerLink="/rsvp">
             <ion-icon name="send-outline"></ion-icon> &nbsp;
-            Notify us
+            RSVP
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </section>
 
+  <!-- maps-->
+  <section id="maps">
+    <ion-grid style="margin-bottom: -6px;" class="ion-no-padding">
+      <ion-row>
+        <ion-col>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15537.373810557063!2d79.0943165!3d13.203740699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad5c10ea2dfb6b%3A0x70c23d4d78c98cf7!2sSaiven%20function%20hall!5e0!3m2!1sen!2suk!4v1598799562595!5m2!1sen!2suk"
+            width="100%" height="360" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
   <!-- Counter Section Begin -->
   <section id="counter">
     <div class="counter spad set-bg" style="background-image: url(../../assets/img/counter-bg.jpg);">
@@ -235,6 +228,7 @@
   </section>
   <!-- Counter Section End -->
 
+
   <!-- Request Form Section Begin -->
   <section id="request" class="request">
     <div class="container">
@@ -250,6 +244,11 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 px-2">
                   <input type="text" formControlName="name" placeholder="Name">
+                  <div
+                    *ngIf="formdata.get('name').invalid && (formdata.get('name').dirty || formdata.get('name').touched)"
+                    lines="none">
+                    <ion-label color="danger">Enter the Name</ion-label>
+                  </div>
                 </div>
                 <!-- <div class="col-lg-6 col-md-6 col-sm-6 px-2">
                   <input type="text" formControlName="email" placeholder="Email">
@@ -257,12 +256,16 @@
 
                 <div class="col-lg-12 px-2 text-center">
                   <textarea formControlName="comments" placeholder="Message"></textarea>
-
+                  <div
+                    *ngIf="formdata.get('comments').invalid && (formdata.get('comments').dirty || formdata.get('comments').touched)"
+                    lines="none">
+                    <ion-label color="danger">Enter the Comments</ion-label>
+                  </div>
                   <div>
                     <ion-label color="success" *ngIf="commentMessage!=null || commentMessage!=undefined">
                       {{commentMessage}}</ion-label>
                   </div>
-                  <button type="submit" (click)="formResponse(formdata)" class="site-btn">Post your Comments</button>
+                  <button type="submit" (click)="formResponse()" class="site-btn">Post your Comments</button>
                 </div>
 
               </div>
@@ -272,10 +275,18 @@
       </div>
     </div>
     <br />
+
+  </section>
+  <!-- Request Form Section End -->
+
+
+
+  <!-- Comments -->
+  <section>
     <div class="container" *ngIf="commentResponse.length>0">
       <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let response of commentResponse">
-          <div class="services__item_new">
+        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let response of commentResponse">
+          <div class="services__item_new" style="background-color: transparent;">
             <h4>{{response.name}}</h4>
             <p>{{response.comments}}</p>
           </div>
@@ -284,8 +295,6 @@
       </div>
     </div>
   </section>
-  <!-- Request Form Section End -->
-
 
   <!-- footer-->
   <ion-footer class="ion-no-border">

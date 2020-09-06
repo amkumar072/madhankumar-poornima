@@ -4,7 +4,7 @@ import * as momentTimezone from 'moment-timezone';
 import * as moment from 'moment';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { CommonService } from '../services/common.service';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { error } from 'protractor';
 // import { faHome } from '@fortawesome/free-regular-svg-icons';
 @Component({
@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
 
     setTimeout(() => {
       this.getCommentsResponse();
-    }, 5000);
+    }, 3000);
 
   }
 
@@ -46,13 +46,15 @@ export class HomePage implements OnInit {
     this.formdata =
       new FormGroup({
         name: new FormControl('', {
-          updateOn: 'change'
+          updateOn: 'change',
+          validators: [Validators.required]
         }),
         email: new FormControl('', {
           updateOn: 'change'
         }),
         comments: new FormControl('', {
-          updateOn: 'change'
+          updateOn: 'change',
+          validators: [Validators.required]
         }),
       });
 
@@ -161,24 +163,29 @@ export class HomePage implements OnInit {
 
   async formResponse() {
 
-    const formValue = this.formdata.value;
-    console.log(this.formdata.value);
+    if (this.formdata.invalid) {
+      this.formdata.markAllAsTouched();
+      return;
+    } else {
+      const formValue = this.formdata.value;
 
-    const loadingResult = await this._loadingCtrl.create({ keyboardClose: true, message: 'Posting...' });
-    loadingResult.present();
 
-    this._commonService.postComments(
-      { ...formValue }
-    ).subscribe(res => {
-      this.formdata.reset();
-      loadingResult.dismiss();
-      this.getCommentsResponse();
-      this.commentMessageMethod('Comments posted successfully...');
-    }, (error) => {
-      console.log('error -->', error);
-      loadingResult.dismiss();
-      // this.commentMessageMethod('Error posting comments...');
-    });
+      const loadingResult = await this._loadingCtrl.create({ keyboardClose: true, message: 'Posting...' });
+      loadingResult.present();
+
+      this._commonService.postComments(
+        { ...formValue }
+      ).subscribe(res => {
+        this.formdata.reset();
+        loadingResult.dismiss();
+        this.getCommentsResponse();
+        this.commentMessageMethod('Comments posted successfully...');
+      }, (error) => {
+        console.log('error -->', error);
+        loadingResult.dismiss();
+        // this.commentMessageMethod('Error posting comments...');
+      });
+    }
 
   }
 
