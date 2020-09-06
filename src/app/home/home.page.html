@@ -9,8 +9,9 @@
 
 <ion-content>
 
-
-  <app-slider-images></app-slider-images>
+  <section id="slider">
+    <app-slider-images></app-slider-images>
+  </section>
   <!-- weblive -->
   <!-- <iframe width="100%" height="70%" src="https://www.youtube-nocookie.com/embed/WgjmWJjGtb4" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -22,91 +23,93 @@
 
 
   <!-- Invitation section-->
-  <ion-grid class="ion-padding">
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <div style="padding-top:80px; padding-bottom: 30px;">
-          <ion-label style="font-size: x-large;" color="primary">
-            Event Details
-          </ion-label> <br />
-          <img src="../../assets/img/icon/ti.png" alt="">
-        </div>
+  <section id="invite">
+    <ion-grid class="ion-padding" style="background-color: #f7f8f3;">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <div style="padding-top:40px; padding-bottom: 30px;">
+            <ion-label style="font-size: x-large;" color="secondary">
+              Event Details
+            </ion-label> <br />
+            <img src="../../assets/img/icon/ti.png" alt="">
+          </div>
 
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-card style="padding-bottom:15px;">
-          <ion-card-header class="ion-text-center">
-            <ion-card-subtitle>Date & Time</ion-card-subtitle>
-          </ion-card-header>
-          <ion-item lines="none" class="ion-text-center">
-            <ion-label style="font-size: large;">October 30th, 2020</ion-label>
-          </ion-item>
-          <!-- <ion-item lines="none" class="ion-text-center">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-card style="padding-bottom:15px;">
+            <ion-card-header class="ion-text-center">
+              <ion-card-subtitle>Date & Time</ion-card-subtitle>
+            </ion-card-header>
+            <ion-item lines="none" class="ion-text-center">
+              <ion-label style="font-size: large;">October 30th, 2020</ion-label>
+            </ion-item>
+            <!-- <ion-item lines="none" class="ion-text-center">
             <ion-label>Friday</ion-label>
           </ion-item> -->
-          <ion-item lines="none" class="ion-text-center">
-            <ion-label>9.00 AM to 10.30 AM</ion-label>
-          </ion-item>
-          <br />
-          <ion-button (click)="presentActionSheet()">
-            <ion-icon name="calendar-outline"></ion-icon> &nbsp;
-            Add to Calendar
-          </ion-button>
+            <ion-item lines="none" class="ion-text-center">
+              <ion-label>9.00 AM to 10.30 AM</ion-label>
+            </ion-item>
+            <br />
+            <ion-button (click)="presentActionSheet()">
+              <ion-icon name="calendar-outline"></ion-icon> &nbsp;
+              Add to Calendar
+            </ion-button>
 
-        </ion-card>
-      </ion-col>
-      <ion-col class="ion-text-center">
+          </ion-card>
+        </ion-col>
+        <ion-col class="ion-text-center">
 
-        <ion-card style="padding-bottom: 15px;">
-          <ion-card-header class="ion-text-center">
-            <ion-card-subtitle>Venue</ion-card-subtitle>
-          </ion-card-header>
-          <ion-item lines="none" class="ion-text-center">
-            <ion-label style="font-size: large;">Saiven Function Hall
-            </ion-label>
+          <ion-card style="padding-bottom: 15px;">
+            <ion-card-header class="ion-text-center">
+              <ion-card-subtitle>Venue</ion-card-subtitle>
+            </ion-card-header>
+            <ion-item lines="none" class="ion-text-center">
+              <ion-label style="font-size: large;">Saiven Function Hall
+              </ion-label>
 
-          </ion-item>
-          <ion-item lines="none" class="ion-text-center">
-            <ion-label>
-              Opp. State Bank of India, C.B.Road, <br />
-              Greamspet, Chittoor, AP
-            </ion-label>
-          </ion-item>
-          <ion-button (click)="location()">
-            <ion-icon name="compass-outline"></ion-icon> &nbsp;
-            Location
-          </ion-button>
+            </ion-item>
+            <ion-item lines="none" class="ion-text-center">
+              <ion-label>
+                Opp. State Bank of India, C.B.Road, <br />
+                Greamspet, Chittoor, AP
+              </ion-label>
+            </ion-item>
+            <ion-button (click)="location()">
+              <ion-icon name="compass-outline"></ion-icon> &nbsp;
+              Location
+            </ion-button>
 
-        </ion-card>
-      </ion-col>
-    </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
 
-  </ion-grid>
-
+    </ion-grid>
+  </section>
 
   <!-- maps-->
+  <section id="maps">
+    <ion-grid style="margin-bottom: -6px;" class="ion-no-padding">
+      <ion-row>
+        <ion-col>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15537.373810557063!2d79.0943165!3d13.203740699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad5c10ea2dfb6b%3A0x70c23d4d78c98cf7!2sSaiven%20function%20hall!5e0!3m2!1sen!2suk!4v1598799562595!5m2!1sen!2suk"
+            width="100%" height="360" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
 
-  <ion-grid style="margin-bottom: -5px;" class="ion-no-padding">
-    <ion-row>
-      <ion-col>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15537.373810557063!2d79.0943165!3d13.203740699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad5c10ea2dfb6b%3A0x70c23d4d78c98cf7!2sSaiven%20function%20hall!5e0!3m2!1sen!2suk!4v1598799562595!5m2!1sen!2suk"
-          width="100%" height="360" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-          tabindex="0"></iframe>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- Services Section Begin -->
-  <section class="services spad">
+  <!-- Events Section Begin -->
+  <section id="events" class="services spad" style="background-color: #3b3e33;">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-title">
-            <ion-label>Our services</ion-label> <br />
+            <ion-label style="font-size: x-large;" color="tertiary">Our services</ion-label> <br />
             <img src="../../assets/img/icon/ti.png" alt="">
           </div>
         </div>
@@ -157,50 +160,147 @@
       </div>
     </div>
   </section>
-  <!-- Services Section End -->
+  <!-- Events Section End -->
 
   <!-- RSVP-->
-  <ion-grid class="ion-padding" style="background-color: antiquewhite;">
-    <ion-row>
-      <ion-col size="4" offset="4" class="ion-text-center">
+  <section id="rsvp">
+    <ion-grid class="ion-padding" style="background-color: antiquewhite;">
+      <ion-row>
+        <ion-col size="4" offset="4" class="ion-text-center">
 
-        <ion-label color="light">
-        </ion-label>
+          <ion-label color="light">
+          </ion-label>
 
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4" offset="4" class="ion-text-center">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" offset="4" class="ion-text-center">
 
-        <img routerLink="/rsvp" src="../../assets/img/rsvp.gif">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6" offset="3" class="ion-text-center">
-        <ion-button color="primary" routerLink="/rsvp">
-          <ion-icon name="send-outline"></ion-icon> &nbsp;
-          Notify us
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          <img routerLink="/rsvp" src="../../assets/img/rsvp.gif">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" offset="3" class="ion-text-center">
+          <ion-button color="primary" routerLink="/rsvp">
+            <ion-icon name="send-outline"></ion-icon> &nbsp;
+            Notify us
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
 
+
+  <!-- Counter Section Begin -->
+  <section id="counter">
+    <div class="counter spad set-bg" style="background-image: url(../../assets/img/counter-bg.jpg);">
+      <div class="container">
+        <div class="row" style="text-align: center;">
+          <div class="col-lg-12">
+            <img src="../../assets/img/icon/ci-2.png" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="counter__item">
+              <!-- <img src="../../assets/img/icon/ci-1.png" alt=""> -->
+              <h2 class="counter_num">{{days}}</h2>
+              <p>Days</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="counter__item">
+
+              <h2 class="counter_num">{{hours}}</h2>
+              <p>Hours</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="counter__item">
+              <!-- <img src="../../assets/img/icon/ci-3.png" alt=""> -->
+              <h2 class="counter_num">{{mins}}</h2>
+              <p>Minutes</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="counter__item">
+              <!-- <img src="../../assets/img/icon/ci-4.png" alt=""> -->
+              <h2 class="counter_num">{{secs}}</h2>
+              <p>Seconds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Counter Section End -->
+
+  <!-- Request Form Section Begin -->
+  <section id="request" class="request">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-7">
+          <div class="request__form">
+            <div class="section-title">
+              <span>let’s meet</span>
+              <h2>Make a request</h2>
+              <p>Should you have any enquiries about Wedding Planner, please fill in our enquiry form.</p>
+            </div>
+            <form [formGroup]="formdata">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 px-2">
+                  <input type="text" formControlName="name" placeholder="Name">
+                </div>
+                <!-- <div class="col-lg-6 col-md-6 col-sm-6 px-2">
+                  <input type="text" formControlName="email" placeholder="Email">
+                </div> -->
+
+                <div class="col-lg-12 px-2 text-center">
+                  <textarea formControlName="comments" placeholder="Message"></textarea>
+
+                  <div>
+                    <ion-label color="success" *ngIf="commentMessage!=null || commentMessage!=undefined">
+                      {{commentMessage}}</ion-label>
+                  </div>
+                  <button type="submit" (click)="formResponse(formdata)" class="site-btn">Post your Comments</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container" *ngIf="commentResponse.length>0">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let response of commentResponse">
+          <div class="services__item_new">
+            <h4>{{response.name}}</h4>
+            <p>{{response.comments}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Request Form Section End -->
 
 
   <!-- footer-->
   <ion-footer class="ion-no-border">
-    <ion-toolbar class="ion-padding">
+    <ion-toolbar color="dark" class="ion-padding">
       <ion-grid>
         <ion-row>
           <ion-col size-xs="12" size-md="6">
             <ion-label> Links</ion-label>
-            <ion-item lines="none">
+            <ion-item color="dark" lines="none">
               <a style="text-decoration: none;" routerLink='/rsvp'>RSVP</a>
             </ion-item>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
             <ion-label> Reach us</ion-label>
-            <ion-item lines="none">
+            <ion-item color="dark" lines="none">
               <ion-buttons>
                 <ion-button href="tel:+919444301381">
                   <ion-icon slot="icon-only" color="secondary" name="call-outline"></ion-icon>
@@ -211,7 +311,7 @@
               </ion-buttons>
               Anandan
             </ion-item>
-            <ion-item lines="none">
+            <ion-item color="dark" lines="none">
               <ion-buttons>
                 <ion-button href="tel:+918608701577">
                   <ion-icon slot="icon-only" color="secondary" name="call-outline"></ion-icon>
