@@ -4,12 +4,13 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-// import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
+import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    // StatusBar,
-    SplashScreen,
+    StatusBar,
+    SplashScreen, 
+    LottieSplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

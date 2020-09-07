@@ -30,14 +30,17 @@ export class HomePage implements OnInit {
     private _commonService: CommonService,
     private _loadingCtrl: LoadingController) { }
 
-  ngOnInit() {
-    this.getCount();
+  async ngOnInit() {
 
     this.formControll();
 
-    setTimeout(() => {
-      this.getCommentsResponse();
-    }, 3000);
+  }
+
+  ionViewWillEnter() {
+
+    this.getCount();
+
+    this.getCommentsResponse();
 
   }
 

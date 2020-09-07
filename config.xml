@@ -1,0 +1,3 @@
+<preference name=”LottieAnimationLocation” value=”www/assets/loading.json” />
+<preference name=”LottieFullScreen” value=”true” />
+<preference name=”LottieLoopAnimation” value=”true” />

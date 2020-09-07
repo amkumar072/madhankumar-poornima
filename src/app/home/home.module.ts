@@ -11,6 +11,8 @@ import { HomePage } from './home.page';
 import { SliderImagesComponent } from '../componenet/slider-images/slider-images.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { NgTickerModule } from 'ng-ticker';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { SliderImagesComponent } from '../componenet/slider-images/slider-images
     ReactiveFormsModule,
     IonicModule,
     HomePageRoutingModule,
+    NgTickerModule,
     // FooterPageModule,
     // FontAwesomeModule
   ],

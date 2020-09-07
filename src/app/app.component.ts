@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Platform, LoadingController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-// import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CommonService } from './services/common.service';
+import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,10 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    // private statusBar: StatusBar,
+    private statusBar: StatusBar,
     private loadingController: LoadingController,
-    private _commonService: CommonService
+    private _commonService: CommonService,
+    private _lottieSplashScreen :LottieSplashScreen,
   ) {
     this.checkDarkmode();
 
@@ -27,15 +29,24 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
+    this.splashScreen.show();
+    this._lottieSplashScreen.show();
     this.platform.ready().then(() => {
-      // this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.statusBar.styleDefault();
+      
+      setTimeout(() => {
+        this._lottieSplashScreen.hide();
+      }, 4000);
+      
     });
   }
 
   ngOnInit() {
   }
 
+  ionViewDidEnter(){
+    this.splashScreen.hide();
+  }
 
   changeDarkmode(event: CustomEvent) {
     const result = event.detail.checked;
