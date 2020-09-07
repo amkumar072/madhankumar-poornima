@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, LoadingController } from '@ionic/angular';
 import * as momentTimezone from 'moment-timezone';
 import * as moment from 'moment';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
+// import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { CommonService } from '../services/common.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { error } from 'protractor';
 // import { faHome } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-home',
@@ -14,7 +13,7 @@ import { error } from 'protractor';
 })
 export class HomePage implements OnInit {
   formdata: FormGroup;
-  home = faCamera;
+  // home = faCamera;
   commentMessage;
   // dateFuture = new Date(2020, 9, 30, 9, 0o0, 0o0);
   marriageDate = momentTimezone.tz("202010300900", "YYYYMMDDHHmm", "Asia/Kolkata").toISOString();

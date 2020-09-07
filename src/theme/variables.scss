@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  .services,
+  .counter {
+    background-color: #f1f6f6;
+  }
+  .services__item_new {
+    background-color: #ffffff;
+  }
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -145,6 +153,19 @@
   --ion-color-light-contrast-rgb: 255, 255, 255;
   --ion-color-light-shade: #1e2023;
   --ion-color-light-tint: #383a3e;
+
+  .services__item h2,
+  .services__item h4,
+  .services__item p {
+    color: #ffffff;
+  }
+
+  .services,
+  form,
+  input,
+  textarea {
+    background-color: var(--ion-card-background);
+  }
 }
 
 /*
@@ -184,6 +205,12 @@
   --ion-item-background: #1c1c1d;
 
   --ion-card-background: #1c1c1d;
+
+  .services__item,
+  .counter,
+  .services__item_new {
+    background-color: #1c1c1d;
+  }
 }
 
 /*
@@ -227,5 +254,11 @@
   --ion-tab-bar-background: #1e1e1e;
 
   --ion-card-background: #1e1e1e;
+
+  .services__item,
+  .counter,
+  .services__item_new {
+    background-color: #1e1e1e;
+  }
 }
 // }

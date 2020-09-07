@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import { FooterPageModule } from '../footer/footer.module';
+// import { FooterPageModule } from '../footer/footer.module';
 import { SliderImagesComponent } from '../componenet/slider-images/slider-images.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     IonicModule,
     HomePageRoutingModule,
-    FooterPageModule,
-    FontAwesomeModule
+    // FooterPageModule,
+    // FontAwesomeModule
   ],
   declarations: [HomePage, SliderImagesComponent],
   schemas: [

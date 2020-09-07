@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Platform, LoadingController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+// import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CommonService } from './services/common.service';
 
 @Component({
@@ -12,12 +12,12 @@ import { CommonService } from './services/common.service';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  dark: boolean;
+  darkMode = false;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
+    // private statusBar: StatusBar,
     private loadingController: LoadingController,
     private _commonService: CommonService
   ) {
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      // this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
@@ -40,15 +40,15 @@ export class AppComponent implements OnInit {
   changeDarkmode(event: CustomEvent) {
     const result = event.detail.checked;
     this._commonService.setDarkMode(result);
-    this.dark = result;
+    this.darkMode = result;
   }
 
   checkDarkmode() {
     this._commonService.getDarkMode().then(res => {
       if (res) {
-        this.dark = res;
+        this.darkMode = res;
       } else {
-        this.dark = false;
+        this.darkMode = false;
       }
     });
   }
