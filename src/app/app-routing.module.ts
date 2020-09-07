@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./rsvp/rsvp.module').then( m => m.RSVPPageModule)
   },
   {
+    path: 'gallery',
+    loadChildren: () => import('./gallery/gallery.module').then( m => m.GalleryPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
