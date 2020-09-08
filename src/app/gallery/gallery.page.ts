@@ -19,15 +19,16 @@ export class GalleryPage implements OnInit {
   slideOptsOne = {
     initialSlide: 0,
     slidesPerView: 1,
-    autoplay: false
+    autoplay: false,
+    centeredSlides: true
   };
   slideOptsTwo = {
     initialSlide: 0,
-    slidesPerView: 3,
+    slidesPerView: 4,
     loop: false,
     centeredSlides: true,
-    spaceBetween: 20,
-    autoplay: false,
+    spaceBetween: 2,
+    autoplay: true,
   };
 
   constructor() {
@@ -40,7 +41,7 @@ export class GalleryPage implements OnInit {
 
   sliderFunction() {
 
-    const count = 4;
+    const count = 11;
     let slideCountArray = [];
     for (let i = 0; i < count; i++) {
       slideCountArray.push({
@@ -65,34 +66,39 @@ export class GalleryPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    // this.slideWithNav.lockSwipes(true);
+    this.slideWithNav.lockSwipes(true);
     this.slideWithNav2.lockSwipes(true);
   }
 
 
   //Move to Next slide
   slideNext(object, slideView) {
+    this.slideLockSwipes(false);
+
     this.slideWithNav.slideNext(500);
 
-    this.slideWithNav2.lockSwipes(false);
     slideView.slideNext(500).then(() => {
       this.checkIfNavDisabled(object, slideView);
     });
-    this.slideWithNav2.lockSwipes(true);
+    this.slideLockSwipes(true);
 
   }
 
   //Move to previous slide
   slidePrev(object, slideView) {
+    this.slideLockSwipes(false);
 
     this.slideWithNav.slidePrev(500);
-
-    this.slideWithNav2.lockSwipes(false);
 
     slideView.slidePrev(500).then(() => {
       this.checkIfNavDisabled(object, slideView);
     });
-    this.slideWithNav2.lockSwipes(true);
+    this.slideLockSwipes(true);
+  }
+
+  slideLockSwipes(value) {
+    this.slideWithNav.lockSwipes(value);
+    this.slideWithNav2.lockSwipes(value);
   }
 
   //Method called when slide is changed by drag or navigation
