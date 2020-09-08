@@ -116,8 +116,6 @@ export class HomePage implements OnInit {
       document.getElementById('countbox').innerHTML = "Now!";
     } else {
 
-      let out = "";
-
       amount = Math.floor(amount / 1000);//kill the "milliseconds" so just secs
 
       this.days = Math.floor(amount / 86400);//days
@@ -194,10 +192,10 @@ export class HomePage implements OnInit {
   getCommentsResponse() {
     this._commonService.getComments().subscribe(res => {
       this.commentResponse = JSON.parse(res);
-      console.log('res-->', this.commentResponse);
+      console.log('comments response-->', this.commentResponse);
 
     }, (error) => {
-      console.log('error-->', error);
+      console.log('comments response error-->', error);
 
     });
   }
