@@ -113,9 +113,26 @@
       <ion-row>
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="services__item">
-                <h2>Date & Time </h2>
+                <!-- <h2 color="primary">Reception </h2> -->
+                <ion-label color="primary">Reception</ion-label>
+                <ion-item lines="none" class="ion-text-center">
+                  <ion-label style="font-size: large;">October 29th, 2020</ion-label>
+                </ion-item>
+                <ion-item lines="none" class="ion-text-center" style="margin-bottom: 20px;">
+                  <ion-label>7.00 PM to 10.00 PM</ion-label>
+                </ion-item>
+
+                <ion-button color="primary" (click)="presentActionSheetRecption()">
+                  <ion-icon name="calendar-outline"></ion-icon> &nbsp;
+                  Add to Calendar
+                </ion-button>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="services__item">
+                <ion-label color="primary">Marriage</ion-label>
                 <ion-item lines="none" class="ion-text-center">
                   <ion-label style="font-size: large;">October 30th, 2020</ion-label>
                 </ion-item>
@@ -123,15 +140,15 @@
                   <ion-label>9.00 AM to 10.30 AM</ion-label>
                 </ion-item>
 
-                <ion-button color="primary" (click)="presentActionSheet()">
+                <ion-button color="primary" (click)="presentActionSheetMarriage()">
                   <ion-icon name="calendar-outline"></ion-icon> &nbsp;
                   Add to Calendar
                 </ion-button>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="services__item">
-                <h2>Venue </h2>
+                <ion-label color="primary">Venue</ion-label>
                 <ion-item lines="none" class="ion-text-center">
                   <ion-label style="font-size: large;">Saiven Function Hall
                   </ion-label>

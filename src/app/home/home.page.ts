@@ -24,7 +24,6 @@ export class HomePage implements OnInit {
 
   commentResponse = [];
 
-  outlookCalenderURL = 'https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2020-10-30T09%3A00%3A00&enddt=2020-10-30T10%3A30%3A00&subject=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&body=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.web.app%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&allday=false';
 
   constructor(private _actionSheetCtrl: ActionSheetController,
     private _commonService: CommonService,
@@ -63,7 +62,7 @@ export class HomePage implements OnInit {
   }
 
 
-  async presentActionSheet() {
+  async presentActionSheetMarriage() {
     const actionSheet = await this._actionSheetCtrl.create({
       header: 'Calendar',
       buttons: [{
@@ -82,7 +81,7 @@ export class HomePage implements OnInit {
 
           const toTime = moment(toTimeConvert).format('YYYYMMDDTHHmmss');
           // console.log('toTime --->', toTime);
-          const googleCalenderURLLocal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&details=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.web.app%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&dates=${fromTime}/${toTime}`;
+          const googleCalenderURLLocal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&details=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.gysite.in%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&dates=${fromTime}/${toTime}`;
 
           this.windowOpen(googleCalenderURLLocal);
         }
@@ -91,7 +90,54 @@ export class HomePage implements OnInit {
         icon: 'calendar',
         cssClass: 'logo-outlook',
         handler: () => {
-          this.windowOpen(this.outlookCalenderURL);
+          const outlookCalenderURL = 'https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2020-10-30T09%3A00%3A00&enddt=2020-10-30T10%3A30%3A00&subject=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&body=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.gysite.in%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&allday=false';
+
+          this.windowOpen(outlookCalenderURL);
+        }
+      },
+      {
+        text: 'Close',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+
+  async presentActionSheetRecption() {
+    const actionSheet = await this._actionSheetCtrl.create({
+      header: 'Calendar',
+      buttons: [{
+        text: 'Google',
+        icon: 'logo-google',
+        cssClass: 'logo-google',
+        handler: () => {
+          const fromTimeConvert = momentTimezone.tz("202010291900", "YYYYMMDDHHmm", "Asia/Kolkata").toISOString();
+          // console.log('fromTimeConvert --->', fromTimeConvert);
+
+          const fromTime = moment(fromTimeConvert).format('YYYYMMDDTHHmmss');
+          // console.log('fromTime --->', fromTime);
+
+          const toTimeConvert = momentTimezone.tz("202010292200", "YYYYMMDDHHmm", "Asia/Kolkata").toISOString();
+          // console.log('toTimeConvert --->', toTimeConvert);
+
+          const toTime = moment(toTimeConvert).format('YYYYMMDDTHHmmss');
+          // console.log('toTime --->', toTime);
+          const googleCalenderURLLocal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&details=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.gysite.in%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&dates=${fromTime}/${toTime}`;
+
+          this.windowOpen(googleCalenderURLLocal);
+        }
+      }, {
+        text: 'Outlook',
+        icon: 'calendar',
+        cssClass: 'logo-outlook',
+        handler: () => {
+          const outlookCalenderURL = 'https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2020-10-29T19%3A00%3A00&enddt=2020-10-29T22%3A00%3A00&subject=Madhankumar%20%26%20Poornima%20Marriage%20Invitation&body=Hi%20All%2C%0A%0ARequest%20the%20pleasure%20of%20your%20%20presence%20with%20family%20and%20friends%20on%20the%20auspicious%20occasion%20of%20%22MADHANKUMAR%20%26%20POORNIMA%22%20marriage.%0A%0Ainvitation%20Link%20%3A%20https%3A%2F%2Fmadhankumar-poornima.gysite.in%2F%20%0A%0ABy%2C%0AAnandan%20%26%20Family%0A%20%0A&location=CB%20Rd%2C%20Greamspet%2C%20Chittoor%2C%20Andhra%20Pradesh%20517002%2C%20India&allday=false';
+
+          this.windowOpen(outlookCalenderURL);
         }
       },
       {
