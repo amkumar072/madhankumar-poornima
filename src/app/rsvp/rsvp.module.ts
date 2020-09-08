@@ -17,4 +17,4 @@ import { RSVPPage } from './rsvp.page';
   ],
   declarations: [RSVPPage]
 })
-export class RSVPPageModule {}
+export class RSVPPageModule { }
