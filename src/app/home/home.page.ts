@@ -214,7 +214,7 @@ export class HomePage implements OnInit {
       return;
     } else {
       const formValue = this.formdata.value;
-
+      this.formdata.reset();
 
       const loadingResult = await this._loadingCtrl.create({ keyboardClose: true, message: 'Posting...' });
       loadingResult.present();
@@ -222,14 +222,13 @@ export class HomePage implements OnInit {
       this._commonService.postComments(
         { ...formValue }
       ).subscribe(res => {
-        this.formdata.reset();
         loadingResult.dismiss();
         this.getCommentsResponse();
         this.commentMessageMethod('Comments posted successfully...');
       }, (error) => {
         console.log('error -->', error);
         loadingResult.dismiss();
-        // this.commentMessageMethod('Error posting comments...');
+        this.commentMessageMethod('Error posting comments. Kindly try again');
       });
     }
 
