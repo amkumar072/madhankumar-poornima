@@ -8,6 +8,8 @@ import { IonSlides } from '@ionic/angular';
 })
 export class GalleryPage implements OnInit {
 
+  imageLocation = ' ../../assets/gallery/0.jpg';
+
   @ViewChild('slideWithNav', { static: false }) slideWithNav: IonSlides;
   @ViewChild('slideWithNav2', { static: false }) slideWithNav2: IonSlides;
 
@@ -24,7 +26,7 @@ export class GalleryPage implements OnInit {
   };
   slideOptsTwo = {
     initialSlide: 0,
-    slidesPerView: 4,
+    slidesPerView: 1,
     loop: false,
     centeredSlides: true,
     spaceBetween: 2,
@@ -66,39 +68,43 @@ export class GalleryPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.slideWithNav.lockSwipes(true);
-    this.slideWithNav2.lockSwipes(true);
+    // this.slideWithNav.lockSwipes(true);
+    // this.slideWithNav2.lockSwipes(true);
   }
 
+  changeTopImage(id) {
+    this.imageLocation = `../../assets/gallery/${id}.jpg`;
+  }
 
   //Move to Next slide
   slideNext(object, slideView) {
-    this.slideLockSwipes(false);
+    // this.slideLockSwipes(false);
 
-    this.slideWithNav.slideNext(500);
+    // this.slideWithNav.slideNext(500);
+    console.log(object, slideView);
 
     slideView.slideNext(500).then(() => {
       this.checkIfNavDisabled(object, slideView);
     });
-    this.slideLockSwipes(true);
+    // this.slideLockSwipes(true);
 
   }
 
   //Move to previous slide
   slidePrev(object, slideView) {
-    this.slideLockSwipes(false);
+    // this.slideLockSwipes(false);
 
-    this.slideWithNav.slidePrev(500);
+    // this.slideWithNav.slidePrev(500);
 
     slideView.slidePrev(500).then(() => {
       this.checkIfNavDisabled(object, slideView);
     });
-    this.slideLockSwipes(true);
+    // this.slideLockSwipes(true);
   }
 
   slideLockSwipes(value) {
-    this.slideWithNav.lockSwipes(value);
-    this.slideWithNav2.lockSwipes(value);
+    // this.slideWithNav.lockSwipes(value);
+    // this.slideWithNav2.lockSwipes(value);
   }
 
   //Method called when slide is changed by drag or navigation

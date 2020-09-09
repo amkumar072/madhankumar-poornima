@@ -8,20 +8,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-grid>
+
+  <!-- <ion-grid>
     <ion-row>
-      <ion-col size-xs="12" size-sm="12" size-md="10" >
-        <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
-          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
-          <ion-slide *ngFor="let s of sliderOne.slidesItems" >
-            <img style="width: 100%; height: 500px;" src="../../assets/gallery/{{s.id}}.jpg">
+
+      <ion-col size="12">
+
+        <ion-slides>
+          <ion-slide>
+            <img style="max-height: 600px;" [src]="imageLocation">
           </ion-slide>
         </ion-slides>
 
       </ion-col>
 
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
   <ion-grid>
     <ion-row>
@@ -34,8 +36,9 @@
 
         <ion-slides pager="false" [options]="slideOptsTwo" #slideWithNav2
           (ionSlideDidChange)="SlideDidChange(sliderTwo,slideWithNav2)">
-          <ion-slide *ngFor="let s of sliderTwo.slidesItems">
-            <img src="../../assets/gallery/{{s.id}}.jpg">
+          <ion-slide *ngFor="let s of sliderTwo.slidesItems" (change)="changeTopImage(s.id)">
+            <ion-img style="cursor: pointer;" (click)="changeTopImage(s.id)"
+              src="../../assets/gallery/{{s.id}}.jpg"> </ion-img>
           </ion-slide>
         </ion-slides>
 
@@ -47,6 +50,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
 </ion-content>

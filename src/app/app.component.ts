@@ -4,7 +4,6 @@ import { Platform, LoadingController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CommonService } from './services/common.service';
-import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +18,7 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private loadingController: LoadingController,
-    private _commonService: CommonService,
-    private _lottieSplashScreen :LottieSplashScreen,
+    private _commonService: CommonService
   ) {
     this.checkDarkmode();
 
@@ -29,23 +26,13 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
-    this.splashScreen.show();
-    this._lottieSplashScreen.show();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      
-      setTimeout(() => {
-        this._lottieSplashScreen.hide();
-      }, 4000);
-      
+      this.splashScreen.hide();
     });
   }
 
   ngOnInit() {
-  }
-
-  ionViewDidEnter(){
-    this.splashScreen.hide();
   }
 
   changeDarkmode(event: CustomEvent) {
@@ -64,16 +51,5 @@ export class AppComponent implements OnInit {
     });
   }
 
-  async presentLoadingWithOptions() {
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class custom-class custom-loading',
-      message: 'Loading...',
-      duration: 1000
-    });
-    await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed!');
-  }
 
 }
