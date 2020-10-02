@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 
 import { NgTickerModule } from 'ng-ticker';
+import { InviteModalComponent } from '../componenet/invite-modal/invite-modal.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { NgTickerModule } from 'ng-ticker';
     HomePageRoutingModule,
     NgTickerModule
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, InviteModalComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

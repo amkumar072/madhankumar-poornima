@@ -35,7 +35,6 @@ export class HomePage implements OnInit {
   async ngOnInit() {
 
     this.formControll();
-    this.presentModal();
   }
 
   ionViewWillEnter() {
@@ -44,14 +43,6 @@ export class HomePage implements OnInit {
 
     this.getCommentsResponse();
 
-  }
-
-  async presentModal() {
-    const modal = await this._modalCtrl.create({
-      component: InviteModalComponent,
-      cssClass: 'modal-wrapper'
-    });
-    return await modal.present();
   }
 
   formControll() {

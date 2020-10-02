@@ -1,3 +1,23 @@
-.ion-toolbar-custom {
-  // --background: url("../../../assets/img/banner1.jpg") center / 100%;
+.modal-backdrop {
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 60%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-content img {
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .modal-content {
+    width: 85%;
+    height: 60vh;
+  }
 }

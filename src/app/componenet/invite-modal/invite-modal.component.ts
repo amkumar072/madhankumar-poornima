@@ -8,14 +8,14 @@ import { ModalController } from '@ionic/angular';
 })
 export class InviteModalComponent implements OnInit {
 
-  constructor(
-    private _modalCtrl: ModalController
-  ) { }
+  isInitialLoad: boolean = true;
+
+  constructor() { }
 
   ngOnInit() { }
 
-  onCancel() {
-    this._modalCtrl.dismiss(null, 'cancel');
+  closeModal() {
+    this.isInitialLoad = false;
   }
 
 }
