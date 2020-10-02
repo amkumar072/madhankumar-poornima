@@ -1,0 +1,6 @@
+<div *ngIf="isInitialLoad == true" class="modal-backdrop" (click)="closeModal()">
+  <div class="modal-content {{modalClasses}}" (click)="$event.stopPropagation()">
+    <ion-icon name="close-circle-outline" class="close-icon" (click)="closeModal()"></ion-icon>
+    <img src="../../../assets/img/invitation_modal.png">
+  </div>
+</div>
