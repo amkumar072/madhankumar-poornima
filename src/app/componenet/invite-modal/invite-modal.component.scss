@@ -12,12 +12,16 @@
 }
 
 .modal-content img {
-  height: 100%;
+  height: 520px;
 }
 
 @media (max-width: 767px) {
   .modal-content {
     width: 85%;
-    height: 60vh;
+    height: 55vh;
+  }
+  
+  .modal-content img {
+    height: 100%;
   }
 }
