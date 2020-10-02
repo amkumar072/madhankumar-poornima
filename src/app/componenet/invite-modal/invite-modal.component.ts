@@ -9,13 +9,17 @@ import { ModalController } from '@ionic/angular';
 export class InviteModalComponent implements OnInit {
 
   isInitialLoad: boolean = true;
+  modalClasses: string = `modal-open`;
 
   constructor() { }
 
   ngOnInit() { }
 
   closeModal() {
-    this.isInitialLoad = false;
+    this.modalClasses = `modal-close`;
+    setTimeout(() => {
+      this.isInitialLoad = false;
+    }, 800);
   }
 
 }

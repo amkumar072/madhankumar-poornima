@@ -6,22 +6,40 @@
 }
 
 .modal-content {
-  width: 60%;
+  width: 550px;
   max-height: 80vh;
   overflow-y: auto;
+  transition: transform 0.8s ease-in;
 }
 
 .modal-content img {
-  height: 520px;
+  height: 500px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .modal-content {
     width: 85%;
-    height: 55vh;
+    height: 500px;
   }
   
   .modal-content img {
     height: 100%;
   }
+}
+
+.modal-open {
+  transform: translateY(0);
+}
+
+.modal-close {
+  transform: translateY(-100vh);
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  opacity: 0.3;
 }
