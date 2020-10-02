@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, LoadingController } from '@ionic/angular';
+import { ActionSheetController, LoadingController, ModalController } from '@ionic/angular';
 import * as momentTimezone from 'moment-timezone';
 import * as moment from 'moment';
 // import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { CommonService } from '../services/common.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { InviteModalComponent } from '../componenet/invite-modal/invite-modal.component';
 // import { faHome } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-home',
@@ -27,12 +28,14 @@ export class HomePage implements OnInit {
 
   constructor(private _actionSheetCtrl: ActionSheetController,
     private _commonService: CommonService,
-    private _loadingCtrl: LoadingController) { }
+    private _loadingCtrl: LoadingController,
+    private _modalCtrl: ModalController
+  ) { }
 
   async ngOnInit() {
 
     this.formControll();
-
+    this.presentModal();
   }
 
   ionViewWillEnter() {
@@ -41,6 +44,14 @@ export class HomePage implements OnInit {
 
     this.getCommentsResponse();
 
+  }
+
+  async presentModal() {
+    const modal = await this._modalCtrl.create({
+      component: InviteModalComponent,
+      cssClass: 'modal-wrapper'
+    });
+    return await modal.present();
   }
 
   formControll() {

@@ -54,3 +54,16 @@ ion-header {
   }
 }
 
+@media (max-width: 765px) {
+  .modal-wrapper {
+    position: absolute;
+    width: 90vw;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+  }
+}
