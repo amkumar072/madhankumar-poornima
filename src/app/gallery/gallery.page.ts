@@ -43,9 +43,9 @@ export class GalleryPage implements OnInit {
 
   sliderFunction() {
 
-    const count = 11;
+    const count = 12;
     let slideCountArray = [];
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i <= count; i++) {
       slideCountArray.push({
         id: i
       });
