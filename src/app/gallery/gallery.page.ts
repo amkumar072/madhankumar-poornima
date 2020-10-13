@@ -31,7 +31,7 @@ export class GalleryPage implements OnInit {
     centeredSlides: true,
     spaceBetween: 2,
     autoplay: true,
-    speed: 3000
+    speed: 2500
   };
 
   constructor() {
