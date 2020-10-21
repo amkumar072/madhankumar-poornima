@@ -13,11 +13,18 @@
   font-size: xx-small;
 }
 
+.display_live {
+  width: 100%;
+  height: 90%;
+}
+
 @media (max-width: 765px) {
   .invite_img {
     display: none;
   }
+
+  .display_live {
+    width: 100%;
+    height: 45%;
+  }
 }
-
-
-
